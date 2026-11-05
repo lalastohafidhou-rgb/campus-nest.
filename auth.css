@@ -1,0 +1,93 @@
+.social-auth-options {
+  display: grid;
+  gap: 10px;
+}
+
+.social-auth-button {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  position: relative;
+  border: 1px solid #e4e8ec;
+  border-radius: 7px;
+  background: #fff;
+  color: #23354d;
+  font-size: 11px;
+  font-weight: 600;
+  transition: background .18s, border-color .18s, transform .18s, box-shadow .18s;
+}
+
+.social-auth-button:hover {
+  transform: translateY(-1px);
+  border-color: #cbd2d9;
+  background: #fcfcfb;
+  box-shadow: 0 5px 15px #172a420d;
+}
+
+.social-auth-button:focus-visible {
+  outline: 3px solid #dda94c66;
+  outline-offset: 2px;
+}
+
+.social-auth-button:disabled,
+.auth-submit:disabled {
+  cursor: wait;
+  opacity: .65;
+}
+
+.social-auth-button svg {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 15px;
+}
+
+.google-mark {
+  width: 17px !important;
+  height: 17px !important;
+}
+
+.apple-mark {
+  width: 19px !important;
+  height: 19px !important;
+  fill: #111;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 19px 0;
+  color: #9aa3ae;
+  font-size: 9px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #edf0f2;
+}
+
+#auth-login .auth-note,
+#auth-register .auth-note {
+  margin-top: 21px;
+}
+
+@media (max-width: 650px) {
+  .social-auth-button {
+    min-height: 44px;
+  }
+
+  .auth-divider {
+    margin: 15px 0;
+  }
+
+  #auth-register .input-label {
+    margin-bottom: 12px;
+  }
+}

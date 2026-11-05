@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10233f">
+  <meta name="description" content="Find your next student home in Kampala with CampusNest.">
+  <title>CampusNest — Student Accommodation Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+  <div class="announcement"><span class="announcement-dot"></span> Your next chapter starts here <span class="announcement-separator">·</span> Find verified student homes across Kampala</div>
+  <header class="site-header">
+    <a class="brand" href="#home" data-route="home" aria-label="CampusNest home">
+      <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 14.2 16 4l12 10.2v13.3a.5.5 0 0 1-.5.5h-23a.5.5 0 0 1-.5-.5V14.2Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 28V17h8v11M3 14.5 16 3l13 11.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="m22.5 8.8 2.8 2.5V6.4h-2.8z" fill="currentColor"/></svg></span>
+      <span class="brand-name">campus<span>nest</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#home" class="nav-link active" data-route="home">Home</a>
+      <a href="#explore" class="nav-link" data-route="explore">Explore stays</a>
+      <a href="#how-it-works" class="nav-link" data-scroll="how-it-works">How it works</a>
+    </nav>
+    <div class="header-actions">
+      <button class="text-button owner-link" data-route="owner">List your space</button>
+      <button class="sign-in-button" data-route="login">Sign in <span class="sign-in-icon">↗</span></button>
+      <button class="mobile-menu" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page active" id="page-home" data-page="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-star">✳</span> A better way to find your student home</div>
+          <h1>Find a place to<br>feel <span>at home.</span></h1>
+          <p class="hero-description">Good rooms. Good people. A little closer to everything that matters. Find your place in Kampala.</p>
+          <div class="hero-proof">
+            <div class="avatar-stack"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt=""><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt=""><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=80&q=80" alt=""></div>
+            <span><strong>2,400+ students</strong><br>found their place with us</span>
+          </div>
+          <div class="hero-decoration">✳</div>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85" alt="Sunlit, thoughtfully furnished student apartment">
+          <div class="hero-image-shade"></div>
+          <div class="hero-image-label"><span class="label-pulse"></span> Places students love <span>in Kampala</span></div>
+          <div class="hero-float-card">
+            <div class="float-card-icon">⌂</div><div><strong>Find your fit</strong><span>Room to focus, space to grow</span></div><span class="float-arrow">↗</span>
+          </div>
+          <div class="hero-image-count"><strong>01</strong><span> / 03</span><i></i><b></b><b></b></div>
+        </div>
+      </section>
+
+      <section class="search-wrap" aria-label="Find accommodation">
+        <div class="search-intro"><span class="search-icon">⌕</span><span>Let's find your place</span></div>
+        <form class="search-form" id="hero-search">
+          <label class="search-field"><span class="field-label">University</span><select name="university"><option value="">Any university</option><option>Makerere University</option><option>Cavendish University Uganda</option><option>Kyambogo University</option><option>Uganda Christian University</option></select></label>
+          <label class="search-field"><span class="field-label">Area</span><select name="area"><option value="">Anywhere in Kampala</option><option>Wandegeya</option><option>Nsambya</option><option>Makerere</option><option>Kikoni</option></select></label>
+          <label class="search-field budget-field"><span class="field-label">Monthly budget</span><select name="budget"><option value="">Any price</option><option value="300000">Under UGX 300k</option><option value="500000">Under UGX 500k</option><option value="700000">Under UGX 700k</option></select></label>
+          <button type="submit" class="button button-primary search-submit"><span>Find a place</span><span>↗</span></button>
+        </form>
+      </section>
+
+      <section class="section popular-section">
+        <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-star">✳</span> Handpicked for you</div><h2>Places students <span>love.</span></h2></div><button class="arrow-link" data-route="explore">Explore all stays <span>↗</span></button></div>
+        <div class="property-grid featured-grid" id="featured-list"></div>
+      </section>
+      <section class="trust-strip"><div class="trust-item"><span class="trust-icon">✓</span><span><strong>Verified spaces</strong><small>Every listing, checked by us</small></span></div><div class="trust-divider"></div><div class="trust-item"><span class="trust-icon">♡</span><span><strong>Student-first prices</strong><small>Find a room for your budget</small></span></div><div class="trust-divider"></div><div class="trust-item"><span class="trust-icon">⌖</span><span><strong>Closer to campus</strong><small>Less commute, more you-time</small></span></div><div class="trust-divider"></div><div class="trust-item"><span class="trust-icon">☏</span><span><strong>Real people, real help</strong><small>Here whenever you need us</small></span></div></section>
+      <section class="section steps-section" id="how-it-works"><div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-star">✳</span> Easy as 1, 2, home</div><h2>Your home is <span>closer than you think.</span></h2></div></div><div class="steps-grid"><article class="step-card"><span class="step-number">01</span><div class="step-art step-art-search">⌕</div><h3>Find your fit</h3><p>Tell us where you study and what you need. We'll help you narrow it down.</p></article><article class="step-card"><span class="step-number">02</span><div class="step-art step-art-heart">♡</div><h3>Get to know the place</h3><p>Explore honest photos, real details and the little things that make a place feel right.</p></article><article class="step-card"><span class="step-number">03</span><div class="step-art step-art-home">⌂</div><h3>Make it yours</h3><p>Connect directly with the host and get ready for your next chapter.</p></article></div></section>
+      <section class="cta-band"><div><span class="eyebrow light-eyebrow">Have a space to share?</span><h2>Give a student a place<br>to call home.</h2><p>List your property and meet great students looking for a place in Kampala.</p><button class="button button-light" data-route="owner">List your property <span>↗</span></button></div><div class="cta-shape">⌂</div></section>
+    </section>
+
+    <section class="page" id="page-explore" data-page="explore">
+      <div class="page-container">
+        <div class="breadcrumb"><a href="#home" data-route="home">Home</a><span>/</span><span>Explore stays</span></div>
+        <div class="explore-heading"><div><div class="eyebrow"><span class="eyebrow-star">✳</span> Your next chapter</div><h1>Find a place that <span>fits.</span></h1><p>Thoughtful spaces, close to campus. All verified and ready for you.</p></div><div class="result-note"><strong id="result-count">6 stays</strong><span> across Kampala</span></div></div>
+        <div class="explore-search"><span class="explore-search-icon">⌕</span><input id="quick-search" placeholder="Search by area, university or property"><button class="button button-primary" id="quick-search-btn">Search <span>↗</span></button></div>
+        <div class="explore-layout">
+          <aside class="filter-panel">
+            <div class="filter-top"><h2>Filters</h2><button id="clear-filters">Clear all</button></div>
+            <label class="filter-label">University<select id="filter-university"><option value="">All universities</option><option>Makerere University</option><option>Cavendish University Uganda</option><option>Kyambogo University</option><option>Uganda Christian University</option></select></label>
+            <label class="filter-label">Area<select id="filter-area"><option value="">All areas</option><option>Wandegeya</option><option>Nsambya</option><option>Makerere</option><option>Kikoni</option><option>Ntinda</option></select></label>
+            <div class="filter-label">Monthly budget <div class="range-labels"><span>UGX 100k</span><strong id="price-value">Any price</strong></div><input id="filter-price" type="range" min="100000" max="1000000" step="50000" value="1000000"></div>
+            <div class="filter-label">Room type<div class="check-list"><label><input type="checkbox" name="room" value="Private room"><span>Private room</span></label><label><input type="checkbox" name="room" value="Shared room"><span>Shared room</span></label><label><input type="checkbox" name="room" value="Studio"><span>Studio</span></label></div></div>
+            <div class="filter-label">Must-have facilities<div class="check-list"><label><input type="checkbox" name="facility" value="Wi-Fi"><span>Wi-Fi</span></label><label><input type="checkbox" name="facility" value="Water"><span>Reliable water</span></label><label><input type="checkbox" name="facility" value="Security"><span>24/7 security</span></label></div></div>
+            <button class="button button-primary filter-apply" id="apply-filters">Show stays <span>↗</span></button>
+          </aside>
+          <div class="explore-results"><div class="results-toolbar"><span>Showing <strong id="showing-count">6 homes</strong></span><label>Sort by <select id="sort-listings"><option value="recommended">Recommended</option><option value="price-low">Price: low to high</option><option value="rating">Top rated</option></select></label></div><div class="property-grid explore-grid" id="explore-list"></div><div class="empty-state" id="empty-state" hidden><div>⌂</div><h3>No places found just yet</h3><p>Try adjusting your filters to see more options.</p><button class="button button-primary" id="empty-clear">Clear filters</button></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-details" data-page="details"><div class="page-container detail-container"><div class="breadcrumb"><a href="#home" data-route="home">Home</a><span>/</span><a href="#explore" data-route="explore">Explore stays</a><span>/</span><span id="detail-crumb">Property</span></div><div id="detail-content"></div></div></section>
+
+    <section class="page" id="page-login" data-page="login">
+      <div class="auth-shell">
+        <div class="auth-visual">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=85" alt="Warm, modern student accommodation">
+          <div class="auth-visual-overlay"></div>
+          <a class="brand auth-brand" href="#home" data-route="home"><span class="brand-mark"><svg viewBox="0 0 32 32"><path d="M4 14.2 16 4l12 10.2v13.3a.5.5 0 0 1-.5.5h-23a.5.5 0 0 1-.5-.5V14.2Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 28V17h8v11M3 14.5 16 3l13 11.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span><span class="brand-name">campus<span>nest</span></span></a>
+          <div class="auth-image-copy"><span>YOUR KAMPALA STORY STARTS HERE</span><h2>Make room for<br>what's next.</h2><p>Find a space that feels like yours, just around the corner from campus.</p></div>
+          <div class="auth-image-caption">A little closer to everything that matters. <span>— CampusNest</span></div>
+        </div>
+        <div class="auth-form-wrap">
+          <button class="back-home" data-route="home">← <span>Back to home</span></button>
+          <div class="auth-form-content">
+            <div class="auth-tabs"><button class="auth-tab active" data-auth="login">Sign in</button><button class="auth-tab" data-auth="register">Create account</button></div>
+            <div id="auth-login">
+              <h1>Welcome <span>back.</span></h1>
+              <p class="auth-subtitle">Your next chapter is waiting for you.</p>
+              <div class="social-auth-options">
+                <button class="social-auth-button" type="button" data-provider="Google"><svg class="google-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z" transform="translate(0 5)"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.74 7.18l7.66 5.94c4.47-4.13 7.12-10.2 7.12-17.59Z"/><path fill="#FBBC05" d="M10.53 28.59a14.4 14.4 0 0 1 0-9.18l-7.98-6.19a23.9 23.9 0 0 0 0 21.56l7.98-6.19Z" transform="translate(0 5)"/><path fill="#34A853" d="M24 48c6.47 0 11.9-2.13 15.86-5.8l-7.66-5.94c-2.13 1.43-4.85 2.28-8.2 2.28-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48Z" transform="translate(0 -5)"/></svg><span>Continue with Google</span></button>
+                <button class="social-auth-button" type="button" data-provider="Apple"><svg class="apple-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.35c.02 2.34 2.05 3.12 2.07 3.13-.02.05-.33 1.13-1.08 2.24-.65.97-1.32 1.94-2.38 1.96-1.04.02-1.38-.63-2.57-.63-1.18 0-1.56.61-2.55.65-1.02.04-1.8-1.05-2.46-2.02-1.34-1.95-2.36-5.51-.98-7.92a3.8 3.8 0 0 1 3.19-1.94c.99-.02 1.93.68 2.55.68.61 0 1.76-.84 2.97-.72.51.02 1.95.21 2.87 1.57-.07.05-1.71 1-1.69 3Zm-1.95-6.14a3.72 3.72 0 0 0 .88-2.67 3.78 3.78 0 0 0-2.45 1.26 3.52 3.52 0 0 0-.9 2.57 3.15 3.15 0 0 0 2.47-1.16Z"/></svg><span>Continue with Apple</span></button>
+              </div>
+              <div class="auth-divider"><span>or continue with email</span></div>
+              <form id="login-form"><label class="input-label">Email address<input type="email" placeholder="you@example.com" required></label><label class="input-label">Password<span class="forgot-password">Forgot password?</span><input type="password" placeholder="Enter your password" required></label><button class="button button-primary auth-submit" type="submit">Sign in with email <span>↗</span></button></form>
+              <div class="auth-switch">New to CampusNest? <button data-auth="register">Create an account</button></div>
+              <div class="auth-note"><span>✦</span> By continuing, you agree to our Terms of Service and Privacy Policy.</div>
+            </div>
+            <div id="auth-register" hidden>
+              <h1>Make yourself <span>at home.</span></h1>
+              <p class="auth-subtitle">Create your account to start exploring.</p>
+              <div class="social-auth-options">
+                <button class="social-auth-button" type="button" data-provider="Google"><svg class="google-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z" transform="translate(0 5)"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.74 7.18l7.66 5.94c4.47-4.13 7.12-10.2 7.12-17.59Z"/><path fill="#FBBC05" d="M10.53 28.59a14.4 14.4 0 0 1 0-9.18l-7.98-6.19a23.9 23.9 0 0 0 0 21.56l7.98-6.19Z" transform="translate(0 5)"/><path fill="#34A853" d="M24 48c6.47 0 11.9-2.13 15.86-5.8l-7.66-5.94c-2.13 1.43-4.85 2.28-8.2 2.28-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48Z" transform="translate(0 -5)"/></svg><span>Continue with Google</span></button>
+                <button class="social-auth-button" type="button" data-provider="Apple"><svg class="apple-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.35c.02 2.34 2.05 3.12 2.07 3.13-.02.05-.33 1.13-1.08 2.24-.65.97-1.32 1.94-2.38 1.96-1.04.02-1.38-.63-2.57-.63-1.18 0-1.56.61-2.55.65-1.02.04-1.8-1.05-2.46-2.02-1.34-1.95-2.36-5.51-.98-7.92a3.8 3.8 0 0 1 3.19-1.94c.99-.02 1.93.68 2.55.68.61 0 1.76-.84 2.97-.72.51.02 1.95.21 2.87 1.57-.07.05-1.71 1-1.69 3Zm-1.95-6.14a3.72 3.72 0 0 0 .88-2.67 3.78 3.78 0 0 0-2.45 1.26 3.52 3.52 0 0 0-.9 2.57 3.15 3.15 0 0 0 2.47-1.16Z"/></svg><span>Continue with Apple</span></button>
+              </div>
+              <div class="auth-divider"><span>or sign up with email</span></div>
+              <form id="register-form"><label class="input-label">Full name<input type="text" placeholder="e.g. Amina Nansubuga" required></label><label class="input-label">Email address<input type="email" placeholder="you@example.com" required></label><label class="input-label">I am a<select><option>Student</option><option>Property owner</option></select></label><label class="input-label">Create password<input type="password" placeholder="At least 8 characters" required minlength="8"></label><button class="button button-primary auth-submit" type="submit">Create account with email <span>↗</span></button></form>
+              <div class="auth-switch">Already have an account? <button data-auth="login">Sign in</button></div>
+              <div class="auth-note"><span>✦</span> By continuing, you agree to our Terms of Service and Privacy Policy.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-student" data-page="student"><div class="dashboard-shell"><aside class="dashboard-sidebar"><a class="brand" href="#home" data-route="home"><span class="brand-mark"><svg viewBox="0 0 32 32"><path d="M4 14.2 16 4l12 10.2v13.3a.5.5 0 0 1-.5.5h-23a.5.5 0 0 1-.5-.5V14.2Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 28V17h8v11M3 14.5 16 3l13 11.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span><span class="brand-name">campus<span>nest</span></span></a><div class="sidebar-label">YOUR SPACE</div><button class="side-link selected" data-tab="overview"><span>◫</span> Overview</button><button class="side-link" data-tab="bookings"><span>▣</span> My bookings <i>1</i></button><button class="side-link" data-tab="saved"><span>♡</span> Saved places</button><button class="side-link" data-tab="notifications"><span>♧</span> Notifications <i class="notification-count">2</i></button><div class="sidebar-label account-label">ACCOUNT</div><button class="side-link" data-tab="profile"><span>◉</span> My profile</button><div class="sidebar-bottom"><div class="mini-profile"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt=""><span><strong>Amina N.</strong><small>Student account</small></span><button aria-label="Profile options">···</button></div><button class="sidebar-home" data-route="home">← Back to the website</button></div></aside><div class="dashboard-main"><div class="dashboard-topbar"><button class="dashboard-menu" aria-label="Open dashboard menu">☰</button><div class="dashboard-breadcrumb">Your space <span>/</span> <strong id="dashboard-title">Overview</strong></div><div class="dashboard-top-actions"><button class="topbar-icon" data-tab="notifications" aria-label="Notifications">♧<i></i></button><div class="dashboard-avatar">AN</div></div></div><div class="dashboard-content" id="student-content"></div></div></div></section>
+
+    <section class="page" id="page-owner" data-page="owner"><div class="dashboard-shell"><aside class="dashboard-sidebar"><a class="brand" href="#home" data-route="home"><span class="brand-mark"><svg viewBox="0 0 32 32"><path d="M4 14.2 16 4l12 10.2v13.3a.5.5 0 0 1-.5.5h-23a.5.5 0 0 1-.5-.5V14.2Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 28V17h8v11M3 14.5 16 3l13 11.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span><span class="brand-name">campus<span>nest</span></span></a><div class="sidebar-label">HOST DASHBOARD</div><button class="side-link selected" data-tab="owner-overview"><span>◫</span> Overview</button><button class="side-link" data-tab="properties"><span>⌂</span> My properties <i>3</i></button><button class="side-link" data-tab="rooms"><span>▤</span> Rooms & availability</button><button class="side-link" data-tab="requests"><span>▣</span> Booking requests <i>4</i></button><button class="side-link" data-tab="owner-photos"><span>▧</span> Photos & media</button><div class="sidebar-label account-label">ACCOUNT</div><button class="side-link" data-tab="owner-profile"><span>◉</span> Host profile</button><div class="sidebar-bottom"><div class="mini-profile"><div class="host-avatar">JM</div><span><strong>James M.</strong><small>Verified host</small></span><button aria-label="Profile options">···</button></div><button class="sidebar-home" data-route="home">← Back to the website</button></div></aside><div class="dashboard-main"><div class="dashboard-topbar"><button class="dashboard-menu" aria-label="Open dashboard menu">☰</button><div class="dashboard-breadcrumb">Host dashboard <span>/</span> <strong id="owner-dashboard-title">Overview</strong></div><div class="dashboard-top-actions"><button class="topbar-icon" aria-label="Notifications">♧<i></i></button><div class="dashboard-avatar host-avatar">JM</div></div></div><div class="dashboard-content" id="owner-content"></div></div></div></section>
+
+    <section class="page" id="page-admin" data-page="admin"><div class="dashboard-shell admin-shell"><aside class="dashboard-sidebar"><a class="brand" href="#home" data-route="home"><span class="brand-mark"><svg viewBox="0 0 32 32"><path d="M4 14.2 16 4l12 10.2v13.3a.5.5 0 0 1-.5.5h-23a.5.5 0 0 1-.5-.5V14.2Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 28V17h8v11M3 14.5 16 3l13 11.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span><span class="brand-name">campus<span>nest</span></span></a><div class="sidebar-label">ADMINISTRATION</div><button class="side-link selected" data-tab="admin-overview"><span>◫</span> Overview</button><button class="side-link" data-tab="users"><span>♧</span> Users</button><button class="side-link" data-tab="verification"><span>✓</span> Property verification <i>7</i></button><button class="side-link" data-tab="admin-bookings"><span>▣</span> Bookings</button><button class="side-link" data-tab="admin-listings"><span>⌂</span> Listings</button><div class="sidebar-label account-label">SYSTEM</div><button class="side-link" data-tab="settings"><span>⚙</span> Settings</button><div class="sidebar-bottom"><div class="mini-profile"><div class="admin-avatar">AD</div><span><strong>Admin account</strong><small>Administrator</small></span><button aria-label="Profile options">···</button></div><button class="sidebar-home" data-route="home">← Back to the website</button></div></aside><div class="dashboard-main"><div class="dashboard-topbar"><button class="dashboard-menu" aria-label="Open dashboard menu">☰</button><div class="dashboard-breadcrumb">Admin <span>/</span> <strong id="admin-dashboard-title">Overview</strong></div><div class="dashboard-top-actions"><span class="admin-status"><i></i> System live</span><div class="dashboard-avatar admin-avatar">AD</div></div></div><div class="dashboard-content" id="admin-content"></div></div></div></section>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <footer class="site-footer"><a class="brand footer-brand" href="#home" data-route="home"><span class="brand-mark"><svg viewBox="0 0 32 32"><path d="M4 14.2 16 4l12 10.2v13.3a.5.5 0 0 1-.5.5h-23a.5.5 0 0 1-.5-.5V14.2Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 28V17h8v11M3 14.5 16 3l13 11.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span><span class="brand-name">campus<span>nest</span></span></a><span>Made for student life in Uganda. <b>© 2026 CampusNest</b></span><div><button data-route="student">Student demo</button><button data-route="owner">Host demo</button><button data-route="admin">Admin demo</button></div></footer>
+  <script src="app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-auth-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="firebase-auth.js"></script>
+</body>
+</html>
